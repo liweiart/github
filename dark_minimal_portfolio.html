@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wei Li Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: sans-serif;
+      background-color: #111;
+      color: #eee;
+      display: flex;
+      height: 100vh;
+    }
+    aside {
+      width: 20%;
+      background-color: #1a1a1a;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo {
+      width: 60px;
+      height: 60px;
+      background-color: #444;
+      border-radius: 50%;
+      margin-bottom: 40px;
+    }
+    nav a {
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+      color: #eee;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: #ff6f61;
+    }
+    main {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+    .content {
+      display: none;
+    }
+    .content.active {
+      display: block;
+    }
+    img.artwork {
+      max-width: 100%;
+      margin-bottom: 10px;
+    }
+    .caption {
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+    .cv-photo {
+      width: 120px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    .cv-text {
+      font-size: 15px;
+      line-height: 1.5;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <div class="logo"></div>
+    <nav>
+      <a onclick="showSection('paintings')">Paintings</a>
+      <a onclick="showSection('installation')">Installation</a>
+      <a onclick="showSection('works')">Works on Paper</a>
+      <a onclick="showSection('collab')">Collaborative Projects</a>
+      <a onclick="showSection('cv')">CV</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div id="paintings" class="content active">
+      <img class="artwork" src="images/painting1.jpg" alt="Painting 1" />
+      <div class="caption">Painting 1 – Acrylic on canvas, 2021</div>
+      <img class="artwork" src="images/painting2.jpg" alt="Painting 2" />
+      <div class="caption">Painting 2 – Oil on board, 2022</div>
+    </div>
+    <div id="installation" class="content">
+      <img class="artwork" src="images/installation1.jpg" alt="Installation 1" />
+      <div class="caption">Installation 1 – Mixed media, 2023</div>
+    </div>
+    <div id="works" class="content">
+      <img class="artwork" src="images/work1.jpg" alt="Work on Paper 1" />
+      <div class="caption">Work on Paper 1 – Ink and graphite, 2022</div>
+    </div>
+    <div id="collab" class="content">
+      <img class="artwork" src="images/collab1.jpg" alt="Collab Project 1" />
+      <div class="caption">With Artist X – Environmental installation, 2023</div>
+    </div>
+    <div id="cv" class="content">
+      <img class="cv-photo" src="images/portrait.jpg" alt="Portrait" />
+      <div class="cv-text">
+        <p>Wei Li is a multidisciplinary artist working across painting, installation, and photography. Her work explores...</p>
+        <p>Education: MFA in ...</p>
+        <p>Exhibitions: ...</p>
+        <p>Contact: email@example.com</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
